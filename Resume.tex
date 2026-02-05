@@ -1,0 +1,134 @@
+\documentclass[10.5pt]{article}
+
+% ===================== Packages =====================
+\usepackage[margin=0.75in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\usepackage{titlesec}
+
+% ===================== Global Settings =====================
+\pagenumbering{gobble}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{2pt}
+
+% ===================== Bullet Spacing =====================
+\setlist[itemize]{
+	leftmargin=1.2em,
+	itemsep=1pt,
+	topsep=1pt,
+	parsep=0pt,
+	partopsep=0pt
+}
+
+% ===================== Section Formatting =====================
+\titleformat{\section}
+{\large\bfseries}
+{}{0em}{}[\vspace{2pt}\titlerule\vspace{-4pt}]
+\titlespacing*{\section}{0pt}{6pt}{4pt}
+
+% ===================== Custom Commands =====================
+\newcommand{\heading}[2]{
+	\textbf{#1}\hfill #2\\[-2pt]
+}
+
+\newcommand{\subheading}[2]{
+	\textit{#1}\hfill \textit{#2}\\[-4pt]
+}
+
+\newcommand{\project}[2]{
+	\textbf{#1}\hfill \textit{#2}\\[-4pt]
+}
+
+\newcommand{\tightitemize}{
+	\vspace{-6pt}
+	\begin{itemize}
+	}
+	
+	% ===================== Document =====================
+	\begin{document}
+		
+		% ===================== Header =====================
+		{\LARGE \textbf{Chaitanyaa Chopraa}}\\[-2pt]
+		Victoria, BC, Canada \,|\, 
+		\href{mailto:reachme@chaiitanyaa.com}{reachme@chaiitanyaa.com} \,|\, 
+		+1-250-891-5255 \,|\, LinkedIn \,|\, Portfolio \,|\, GitHub
+		
+		\vspace{2pt}
+		
+		% ===================== Summary =====================
+		\section{Summary}
+		Computer Science graduate (Dec 2025, University of Victoria) with a Software Systems specialization and experience across full-stack web development, AI-powered applications, and engineering QA/QC processes. Proven ability to design, build, and ship production-quality systems using React, Node.js, Python, and modern tooling, including LLM APIs for automation and analytics.
+		
+		% ===================== Education =====================
+		\section{Education}
+		\heading{University of Victoria}{Victoria, BC, Canada}
+		\subheading{BSc, Computer Science — Software Systems \textbullet\ Business Minor}{Sept 2021 -- Dec 2025}
+		Graduating GPA: 8.3 / 9.0\\
+		\textbf{Relevant Coursework:} Software Engineering, Web Development, Databases, Algorithms and Data Structures, Operating Systems, Software Testing and QA
+		
+		% ===================== Skills =====================
+		\section{Skills}
+		\textbf{Programming Languages:} JavaScript, TypeScript, Python, Java, C, C++, Assembly \\
+		\textbf{Frontend:} HTML5, CSS3, Tailwind CSS, Bootstrap, React, Vite, Responsive Design \\
+		\textbf{Backend \& APIs:} Node.js, Express, REST APIs, Authentication (JWT) \\
+		\textbf{Databases:} MongoDB, PostgreSQL, MySQL, Firebase \\
+		\textbf{AI \& Data Tools:} ChatGPT, Gemini API, Microsoft Copilot, Copilot Studio, Prompt Engineering \\
+		\textbf{DevOps \& Systems:} Git, Docker, Linux, CI/CD Concepts \\
+		\textbf{Engineering \& QA:} Software Testing, Debugging, QA/QC Processes, Documentation \\
+		\textbf{Soft Skills:} Problem Solving, Systems Thinking, Ownership, Collaboration, Communication
+		
+		% ===================== Work Experience =====================
+		\section{Work Experience}
+		
+		\heading{Houle Electric}{Jan 2024 -- Aug 2024}
+		\subheading{Co-op Project Manager / Assistant}{Cowichan District Hospital Redevelopment}
+		\tightitemize
+		\item Designed and implemented robust Quality Assurance and Quality Control (QA/QC) workflows for a large-scale hospital redevelopment project.
+		\item Standardized inspection and documentation processes, ensuring compliance with safety, quality, and regulatory requirements.
+		\item Built and configured a reusable company-wide Procore QA/QC template adopted across multiple projects and recognized by senior leadership.
+		\item Managed high-volume documentation, inspections, and timesheets with a strong emphasis on accuracy and accountability.
+	\end{itemize}
+	\vspace{-6pt}
+	
+	\heading{Infinity Outdoor Pvt. Ltd}{}
+	\subheading{Contract Web Developer}{}
+	\tightitemize
+	\item Designed and launched a responsive marketing website to improve brand visibility and campaign presentation.
+	\item Built with React, Vite, and Tailwind CSS, achieving a 35\% faster load time through optimized component structure and asset handling.
+	\item Collaborated directly with stakeholders to translate business requirements into a modern, data-driven web experience.
+\end{itemize}
+
+% ===================== Projects =====================
+\section{Projects}
+
+\project{Social Spark — AI Brand \& Influencer Platform}{React, Node.js, MongoDB, Gemini API, Docker}
+\tightitemize
+\item Built an AI-driven platform for intelligent brand–influencer campaign matching and analytics.
+\item Integrated Gemini API to automate campaign recommendations and engagement insights.
+\item Implemented secure JWT authentication and scalable REST APIs.
+\end{itemize}
+\vspace{-6pt}
+
+\project{Day Trading System — Full Stack Matching Engine}{Python, REST APIs, Docker}
+\tightitemize
+\item Designed a trading platform supporting wallets, market orders, and limit orders.
+\item Implemented FIFO-based order matching with partial fills and sorted order books.
+\end{itemize}
+\vspace{-6pt}
+
+\project{Infinity Outdoor Website}{React, Vite, Tailwind CSS}
+\tightitemize
+\item Built a responsive client-facing marketing website with reusable UI components.
+\end{itemize}
+\vspace{-6pt}
+
+\project{The Brief Bulletin — Journalism Platform}{HTML, CSS, JavaScript}
+\tightitemize
+\item Developed a real-time blogging platform optimized for SEO and rapid publishing.
+\end{itemize}
+
+% ===================== Additional =====================
+\section{Additional}
+\textbf{Interests:} Learning modern technologies, working on cars, collecting sneakers, video games
+
+\end{document}
