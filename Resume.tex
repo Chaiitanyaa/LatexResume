@@ -1,72 +1,72 @@
 \documentclass[10.5pt]{article}
 
-% ===================== Packages =====================
 \usepackage[margin=0.75in]{geometry}
 \usepackage[hidelinks]{hyperref}
 \usepackage{enumitem}
 \usepackage{titlesec}
 
-% ===================== Global Settings =====================
 \pagenumbering{gobble}
 \setlength{\parindent}{0pt}
-\setlength{\parskip}{2pt}
+\setlength{\parskip}{0pt}
 
-% ===================== Bullet Spacing =====================
+% Lists: compact but safe (prevents “glued lines”)
 \setlist[itemize]{
-	leftmargin=1.2em,
+	leftmargin=1.15em,
 	itemsep=1pt,
-	topsep=1pt,
+	topsep=2pt,
 	parsep=0pt,
 	partopsep=0pt
 }
 
-% ===================== Section Formatting =====================
-\titleformat{\section}
-{\large\bfseries}
-{}{0em}{}[\vspace{2pt}\titlerule\vspace{-4pt}]
-\titlespacing*{\section}{0pt}{6pt}{4pt}
+\raggedright
+\sloppy
 
-% ===================== Custom Commands =====================
-\newcommand{\heading}[2]{
-	\textbf{#1}\hfill #2\\[-2pt]
+% Sections
+\titleformat{\section}{\large\bfseries}{}{0em}{}[\vspace{2pt}\titlerule\vspace{0pt}]
+\titlespacing*{\section}{0pt}{4pt}{4pt}
+
+% Aligned rows
+\newcommand{\row}[2]{%
+	\begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}r@{}}%
+		#1 & #2 \\
+	\end{tabular*}%
+}
+\newcommand{\rowit}[2]{%
+	\begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}r@{}}%
+		\textit{#1} & \textit{#2} \\
+	\end{tabular*}%
 }
 
-\newcommand{\subheading}[2]{
-	\textit{#1}\hfill \textit{#2}\\[-4pt]
-}
+\newcommand{\blocksep}{\par\vspace{3pt}}
 
-\newcommand{\project}[2]{
-	\textbf{#1}\hfill \textit{#2}\\[-4pt]
-}
-
-\newcommand{\tightitemize}{
-	\vspace{-6pt}
-	\begin{itemize}
-	}
+% Safe “tight” list start (not too aggressive)
+\newcommand{\tightitemize}{\begin{itemize}}
+	\newcommand{\afterlist}{\vspace{2pt}}
 	
-	% ===================== Document =====================
 	\begin{document}
 		
-		% ===================== Header =====================
-		{\LARGE \textbf{Chaitanyaa Chopraa}}\\[-2pt]
-		Victoria, BC, Canada \,|\, 
-		\href{mailto:reachme@chaiitanyaa.com}{reachme@chaiitanyaa.com} \,|\, 
-		+1-250-891-5255 \,|\, LinkedIn \,|\, Portfolio \,|\, GitHub
+		% Header
+		\begin{center}
+			{\LARGE \centering \textbf{Chaitanyaa Chopraa}}\\[2pt]
+			Victoria, BC, Canada \,|\, 
+			\href{mailto:reachme@chaiitanyaa.com}{reachme@chaiitanyaa.com} \,|\, 
+			+1-250-891-5255 \,|\, \href{https://www.linkedin.com/in/chaiitanyaa-chopraa-96ba09229/}{LinkedIn} \,|\, \href{https://chaiitanyaa.com}{Portfolio} \,|\, \href{https://github.com/Chaiitanyaa}{GitHub}
+		\end{center}
 		
-		\vspace{2pt}
+		\vspace{-5pt}
 		
-		% ===================== Summary =====================
+		% Summary
 		\section{Summary}
 		Computer Science graduate (Dec 2025, University of Victoria) with a Software Systems specialization and experience across full-stack web development, AI-powered applications, and engineering QA/QC processes. Proven ability to design, build, and ship production-quality systems using React, Node.js, Python, and modern tooling, including LLM APIs for automation and analytics.
 		
-		% ===================== Education =====================
+		% Education
 		\section{Education}
-		\heading{University of Victoria}{Victoria, BC, Canada}
-		\subheading{BSc, Computer Science — Software Systems \textbullet\ Business Minor}{Sept 2021 -- Dec 2025}
+		\row{\textbf{University of Victoria}}{Victoria, BC, Canada}
+		\rowit{BSc, Computer Science — Software Systems \textbullet\ Business Minor}{Sept 2021 -- Dec 2025}
 		Graduating GPA: 8.3 / 9.0\\
 		\textbf{Relevant Coursework:} Software Engineering, Web Development, Databases, Algorithms and Data Structures, Operating Systems, Software Testing and QA
 		
-		% ===================== Skills =====================
+		% Skills
 		\section{Skills}
 		\textbf{Programming Languages:} JavaScript, TypeScript, Python, Java, C, C++, Assembly \\
 		\textbf{Frontend:} HTML5, CSS3, Tailwind CSS, Bootstrap, React, Vite, Responsive Design \\
@@ -77,57 +77,52 @@
 		\textbf{Engineering \& QA:} Software Testing, Debugging, QA/QC Processes, Documentation \\
 		\textbf{Soft Skills:} Problem Solving, Systems Thinking, Ownership, Collaboration, Communication
 		
-		% ===================== Work Experience =====================
+		% Work Experience
 		\section{Work Experience}
 		
-		\heading{Houle Electric}{Jan 2024 -- Aug 2024}
-		\subheading{Co-op Project Manager / Assistant}{Cowichan District Hospital Redevelopment}
+		\row{\textbf{Houle Electric}}{Jan 2024 -- Aug 2024}
+		\rowit{Co-op Project Manager / Assistant}{Cowichan District Hospital Redevelopment}
 		\tightitemize
 		\item Designed and implemented robust Quality Assurance and Quality Control (QA/QC) workflows for a large-scale hospital redevelopment project.
 		\item Standardized inspection and documentation processes, ensuring compliance with safety, quality, and regulatory requirements.
 		\item Built and configured a reusable company-wide Procore QA/QC template adopted across multiple projects and recognized by senior leadership.
 		\item Managed high-volume documentation, inspections, and timesheets with a strong emphasis on accuracy and accountability.
 	\end{itemize}
-	\vspace{-6pt}
+	\afterlist
 	
-	\heading{Infinity Outdoor Pvt. Ltd}{}
-	\subheading{Contract Web Developer}{}
+	\row{\textbf{Infinity Outdoor Pvt.\ Ltd}}{Delivered 2025}
+	\rowit{Contract Web Developer}{}
 	\tightitemize
 	\item Designed and launched a responsive marketing website to improve brand visibility and campaign presentation.
 	\item Built with React, Vite, and Tailwind CSS, achieving a 35\% faster load time through optimized component structure and asset handling.
 	\item Collaborated directly with stakeholders to translate business requirements into a modern, data-driven web experience.
 \end{itemize}
+\afterlist
 
-% ===================== Projects =====================
-\section{Projects}
+% Projects
+\section{Technical Projects}
 
-\project{Social Spark — AI Brand \& Influencer Platform}{React, Node.js, MongoDB, Gemini API, Docker}
+\row{\textbf{Social Spark — AI Brand \& Influencer Platform}}{\textit{React, Node.js, MongoDB, Gemini API, Docker}}
 \tightitemize
-\item Built an AI-driven platform for intelligent brand–influencer campaign matching and analytics.
+\item Built an AI-driven platform for intelligent brand--influencer campaign matching and analytics.
 \item Integrated Gemini API to automate campaign recommendations and engagement insights.
 \item Implemented secure JWT authentication and scalable REST APIs.
 \end{itemize}
-\vspace{-6pt}
+\afterlist
 
-\project{Day Trading System — Full Stack Matching Engine}{Python, REST APIs, Docker}
+\row{\textbf{Day Trading System — Full Stack Matching Engine}}{\textit{Python, REST APIs, Docker}}
 \tightitemize
 \item Designed a trading platform supporting wallets, market orders, and limit orders.
 \item Implemented FIFO-based order matching with partial fills and sorted order books.
 \end{itemize}
-\vspace{-6pt}
+\afterlist
 
-\project{Infinity Outdoor Website}{React, Vite, Tailwind CSS}
-\tightitemize
-\item Built a responsive client-facing marketing website with reusable UI components.
-\end{itemize}
-\vspace{-6pt}
-
-\project{The Brief Bulletin — Journalism Platform}{HTML, CSS, JavaScript}
+\row{\textbf{The Brief Bulletin — Journalism Platform}}{\textit{HTML, CSS, JavaScript}}
 \tightitemize
 \item Developed a real-time blogging platform optimized for SEO and rapid publishing.
 \end{itemize}
 
-% ===================== Additional =====================
+% Additional
 \section{Additional}
 \textbf{Interests:} Learning modern technologies, working on cars, collecting sneakers, video games
 
